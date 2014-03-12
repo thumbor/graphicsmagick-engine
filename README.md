@@ -1,5 +1,5 @@
-graphicsmagick-engine
-=====================
+graphicsmagick-engine [![Build Status](https://travis-ci.org/thumbor/graphicsmagick-engine.png?branch=0.1.0)](https://travis-ci.org/thumbor/graphicsmagick-engine)
+=============================================================================================
 
 Thumbor engine for the GraphicsMagick imaging library.
 
