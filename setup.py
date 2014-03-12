@@ -9,9 +9,11 @@ tests_require = [
     'nose',
     'coverage',
     'yanc',
+    'colorama',
     'preggy',
     'ipdb',
     'coveralls',
+    'numpy',
 ]
 
 setup(
