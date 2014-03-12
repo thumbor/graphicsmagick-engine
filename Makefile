@@ -2,7 +2,7 @@ test: unit integration
 
 unit:
 	@coverage run --branch `which nosetests` -vv --with-yanc -s tests/unit/
-	@coverage report -m --fail-under=80
+	@coverage report -m
 
 coverage-html: unit
 	@coverage html -d cover
