@@ -17,6 +17,8 @@ In order to use this engine with your thumbor install, specify this engine as th
     # imaging engine to use to process images
     ENGINE = 'graphicsmagick_engine'
 
+Instead of the value you used before of 'thumbor.engines.graphicsmagick'.
+
 Contributing
 ============
 
