@@ -16,6 +16,7 @@ from pgmagick.api import Draw
 from pgmagick._pgmagick import get_blob_data
 
 from thumbor.engines import BaseEngine
+from thumbor.utils import deprecated
 
 FORMATS = {
     '.jpg': 'JPEG',
@@ -92,9 +93,7 @@ class Engine(BaseEngine):
 
         return img_buffer.data
 
-    def convert_to_rgb(self):
-        return self.get_image_mode(), self.get_image_data()
-
+    @deprecated("Use image_data_as_rgb instead.")
     def get_image_data(self):
         self.image.magick(self.get_image_mode())
         blob = Blob()
@@ -108,10 +107,15 @@ class Engine(BaseEngine):
         self.image.size(self.image.size())
         self.image.read(blob)
 
+    @deprecated("Use image_data_as_rgb instead.")
     def get_image_mode(self):
         if self.image.type() in ALPHA_TYPES:
             return "RGBA"
         return "RGB"
+
+    def image_data_as_rgb(self, update_image=True):
+        # TODO: Handle other image formats
+        return self.get_image_mode(), self.get_image_data()
 
     def draw_rectangle(self, x, y, width, height):
         draw = Draw()
